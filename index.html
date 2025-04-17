@@ -1,14 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>US Economy Barometer</title></title>
+  <title>US Economy Barometer</title>
   <style>
     body {
       font-family: sans-serif;
-      max-width: 900px;
+      max-width: 1200px;
       margin: 40px auto;
       padding: 0 20px;
       background-color: #f9f9f9;
@@ -18,8 +17,15 @@
       text-align: center;
       color: #2c3e50;
     }
+    .graph-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
     .graph {
-      margin: 40px 0;
+      flex: 1 1 400px;
+      max-width: 550px;
       text-align: center;
     }
     img {
@@ -27,6 +33,11 @@
       height: auto;
       border: 1px solid #ddd;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    }
+    .note {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 8px;
     }
     footer {
       text-align: center;
@@ -38,14 +49,18 @@
 <body>
   <h1>US Economy Barometer</h1>
 
-  <div class="graph">
-    <h2>Consumer confidence by income group</h2>
-    <img src="graphs/csi_by_income_from_2024.jpeg" alt="Consumer confidence by income group">
-  </div>
+  <div class="graph-container">
+    <div class="graph">
+      <h2>Consumer confidence by income group</h2>
+      <img src="graphs/csi_by_income_from_2024.jpeg" alt="Consumer confidence by income group">
+      <div class="note">[Placeholder for notes about this graph]</div>
+    </div>
 
-  <div class="graph">
-    <h2>Net economic sentiment (favorable minus unfavorable)</h2>
-    <img src="graphs/net_sentiment_from_2024.jpeg" alt="Net economic sentiment">
+    <div class="graph">
+      <h2>Net economic sentiment (favorable minus unfavorable)</h2>
+      <img src="graphs/net_sentiment_from_2024.jpeg" alt="Net economic sentiment">
+      <div class="note">[Placeholder for notes about this graph]</div>
+    </div>
   </div>
 
   <footer>
