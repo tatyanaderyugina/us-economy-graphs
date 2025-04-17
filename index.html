@@ -7,11 +7,13 @@
   <style>
     body {
       font-family: sans-serif;
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 10px;
+      margin: 20px;
       background-color: #f9f9f9;
       color: #333;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
     }
     h1, h2 {
       text-align: center;
@@ -24,12 +26,12 @@
       justify-content: center;
     }
     .graph {
-      flex: 1 1 400px;
-      max-width: 550px;
+      flex: 1 1 45%;
+      min-width: 300px;
       text-align: center;
     }
     img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       border: 1px solid #ddd;
       box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
@@ -47,24 +49,26 @@
   </style>
 </head>
 <body>
-  <h1>US Economy Barometer</h1>
+  <div class="container">
+    <h1>US Economy Barometer</h1>
 
-  <div class="graph-container">
-    <div class="graph">
-      <h2>Consumer confidence by income group</h2>
-      <img src="graphs/csi_by_income_from_2024.jpeg" alt="Consumer confidence">
-      <div class="note">[Placeholder for notes about this graph]</div>
+    <div class="graph-container">
+      <div class="graph">
+        <h2>Consumer confidence by income group</h2>
+        <img src="graphs/csi_by_income_from_2024.jpeg" alt="Consumer confidence by income group">
+        <div class="note">[Placeholder for notes about this graph]</div>
+      </div>
+
+      <div class="graph">
+        <h2>Net economic sentiment (favorable minus unfavorable)</h2>
+        <img src="graphs/net_sentiment_from_2024.jpeg" alt="Net economic sentiment">
+        <div class="note">[Placeholder for notes about this graph]</div>
+      </div>
     </div>
 
-    <div class="graph">
-      <h2>Net economic sentiment</h2>
-      <img src="graphs/net_sentiment_from_2024.jpeg" alt="Net economic sentiment">
-      <div class="note">[Placeholder for notes about this graph]</div>
-    </div>
+    <footer>
+      Updated April 2025
+    </footer>
   </div>
-
-  <footer>
-    Updated April 2025
-  </footer>
 </body>
 </html>
