@@ -3,21 +3,43 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How the US economy is doing, in simple graphs: jobs, prices, housing, pay, and consumer sentiment, updated monthly from official sources." />
   <title>US Economy Barometer</title>
   <style>
     body {
-      font-family: sans-serif;
-      margin: 20px;
-      background-color: #ffffff;
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
       color: #333;
+      line-height: 1.5;
+    }
+    header {
+      background-color: #ffffff;
+      border-bottom: 3px solid #0073B7;
+      padding: 28px 20px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 6px;
+      color: #1f3a52;
+      font-size: 2.1em;
+    }
+    .tagline {
+      margin: 0;
+      color: #555;
+      font-size: 1.05em;
     }
     .container {
       max-width: 1200px;
       margin: 0 auto;
+      padding: 10px 20px 20px;
     }
-    h1, h2 {
+    .intro {
+      max-width: 820px;
+      margin: 18px auto 6px;
       text-align: center;
-      color: #2c3e50;
+      color: #555;
+      font-size: 0.97em;
     }
     .graph-container {
       display: flex;
@@ -25,70 +47,187 @@
       gap: 20px;
       justify-content: center;
     }
+    .section-header {
+      flex-basis: 100%;
+      margin: 22px 2px 0;
+      border-bottom: 2px solid #d9e2ea;
+      padding-bottom: 6px;
+    }
+    .section-header h2 {
+      margin: 0 0 2px;
+      color: #1f3a52;
+      font-size: 1.35em;
+    }
+    .section-header p {
+      margin: 0;
+      color: #666;
+      font-size: 0.95em;
+    }
     .graph {
       flex: 1 1 45%;
       min-width: 300px;
+      background-color: #ffffff;
+      border: 1px solid #e3e8ee;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+      padding: 16px 16px 14px;
       text-align: center;
+    }
+    .graph h3 {
+      margin: 0 0 4px;
+      color: #2c3e50;
+      font-size: 1.15em;
+    }
+    .desc {
+      margin: 0 0 10px;
+      color: #555;
+      font-size: 0.93em;
     }
     img {
       width: 100%;
       height: auto;
-      border: 1px solid #ddd;
-      box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+      border: 1px solid #eeeeee;
+      border-radius: 4px;
     }
     .note {
-      font-size: 0.9em;
-      color: #666;
+      font-size: 0.83em;
+      color: #777;
       margin-top: 8px;
+      text-align: left;
+    }
+    .note a {
+      color: #0073B7;
     }
     footer {
       text-align: center;
-      margin-top: 50px;
+      margin: 40px 0 26px;
       color: #777;
+      font-size: 0.9em;
     }
   </style>
 </head>
 <body>
-  <div class="container">
+  <header>
     <h1>US Economy Barometer</h1>
-    <p style="text-align: center;"> How the US Economy is doing, illustrated with simple graphs.</p>
+    <p class="tagline">How the US economy is doing, illustrated with simple graphs.</p>
+  </header>
+  <div class="container">
+    <p class="intro">
+      Big economic numbers are easy to argue about and hard to picture. This page tracks the
+      essentials &mdash; jobs, prices, housing, paychecks, and how Americans feel about it all &mdash;
+      using official government and university data. Every graph starts in January 2024 and is
+      updated monthly as new numbers come out.
+    </p>
     <div class="graph-container">
-      <div class="graph">
-        <h2>Consumer confidence</h2>
-        <img src="graphs/csi_by_income.jpeg" alt="Consumer confidence by income group">
-        <div class="note">Source: University of Michigan Survey of Consumers. Data series: Index of Consumer Sentiment Within Income Terciles. <a href="https://data.sca.isr.umich.edu/subset/subset.php">Link to data page.</a></div>
+
+      <!-- Jobs: can people find work? -->
+      <div class="section-header">
+        <h2>Jobs</h2>
+        <p>Is it easy to find work? The job market is the foundation of most families' finances.</p>
       </div>
 
       <div class="graph">
-        <h2>Net sentiment about future business conditions</h2>
-        <img src="graphs/csi_bexp_net_sentiment.jpeg" alt="Net sentiment about business conditions in a year">
-        <div class="note">Source: University of Michigan Survey of Consumers. Data series: Expected Change in Business Conditions in a Year. Net economic sentiment is calculated as the difference between percent with a favorable outlook and percent with an unfavorable outlook. <a href="https://data.sca.isr.umich.edu/subset/subset.php">Link to data page.</a></div>
-      </div>
-
-      <div class="graph">
-        <h2>Unemployment rate</h2>
+        <h3>Unemployment rate</h3>
+        <p class="desc">The share of people who want to work but don't have a job. Lower is better.</p>
         <img src="graphs/unemployment_rate.jpg" alt="Unemployment rate">
         <div class="note">Source: Bureau of Labor Statistics. Data series is adjusted for seasonality. <a href="https://data.bls.gov/dataViewer/view/timeseries/LNS14000000">Link to data page.</a></div>
       </div>
 
       <div class="graph">
-        <h2>Consumer Price Index: All</h2>
+        <h3>Jobs added each month</h3>
+        <p class="desc">How many jobs the economy gained or lost versus the month before, in thousands. A healthy economy adds jobs most months.</p>
+        <img src="graphs/jobs_added.jpg" alt="Monthly change in nonfarm payroll jobs">
+        <div class="note">Source: Bureau of Labor Statistics payroll survey. Monthly change in total nonfarm employment, adjusted for seasonality. <a href="https://data.bls.gov/dataViewer/view/timeseries/CES0000000001">Link to data page.</a></div>
+      </div>
+
+      <!-- Inflation: how fast are prices rising? -->
+      <div class="section-header">
+        <h2>Prices</h2>
+        <p>How fast is the cost of living rising? Index charts show the change since January 2024 (start = 100), and the dollar charts show what things actually cost.</p>
+      </div>
+
+      <div class="graph">
+        <h3>Consumer Price Index: All</h3>
+        <p class="desc">Overall consumer prices. A value of 107 means prices are 7% higher than in January 2024.</p>
         <img src="graphs/cpi_all_items.jpg" alt="Consumer Price Index">
         <div class="note">Source: Bureau of Labor Statistics. Data series is adjusted for seasonality. <a href="https://www.bls.gov/cpi/tables/supplemental-files/">Link to data page.</a></div>
-    </div>
+      </div>
 
       <div class="graph">
-        <h2>Consumer Price Index: Housing</h2>
+        <h3>Consumer Price Index: Food</h3>
+        <p class="desc">The same measure, for food only &mdash; groceries plus eating out.</p>
+        <img src="graphs/cpi_food.jpg" alt="Consumer Price Index: Food">
+        <div class="note">Source: Bureau of Labor Statistics. Data series is adjusted for seasonality. <a href="https://www.bls.gov/cpi/tables/supplemental-files/">Link to data page.</a></div>
+      </div>
+
+      <div class="graph">
+        <h3>Grocery prices</h3>
+        <p class="desc">Average US prices of everyday staples: ground beef, milk, eggs, and bread.</p>
+        <img src="graphs/grocery_prices.jpg" alt="Average prices of ground beef, milk, eggs, and bread">
+        <div class="note">Source: Bureau of Labor Statistics average price data. U.S. city average prices, not adjusted for seasonality. <a href="https://www.bls.gov/cpi/factsheets/average-prices.htm">Link to data page.</a></div>
+      </div>
+
+      <div class="graph">
+        <h3>Gas price</h3>
+        <p class="desc">The average pump price of a gallon of regular unleaded gasoline.</p>
+        <img src="graphs/gas_price.jpg" alt="Average price of regular gasoline per gallon">
+        <div class="note">Source: Bureau of Labor Statistics average price data. U.S. city average price, not adjusted for seasonality. <a href="https://data.bls.gov/dataViewer/view/timeseries/APU000074714">Link to data page.</a></div>
+      </div>
+
+      <!-- Housing: the cost of shelter and of buying a home -->
+      <div class="section-header">
+        <h2>Housing</h2>
+        <p>For most families, housing is the single biggest expense.</p>
+      </div>
+
+      <div class="graph">
+        <h3>Consumer Price Index: Housing</h3>
+        <p class="desc">The cost of shelter and utilities &mdash; rent, homeowners' costs, and household energy &mdash; relative to January 2024.</p>
         <img src="graphs/cpi_housing.jpg" alt="Consumer Price Index: Housing">
         <div class="note">Source: Bureau of Labor Statistics. Data series is adjusted for seasonality. <a href="https://www.bls.gov/cpi/tables/supplemental-files/">Link to data page.</a></div>
-    </div>
+      </div>
 
       <div class="graph">
-        <h2>Consumer Price Index: Food</h2>
-        <img src="graphs/cpi_food.jpg" alt="Consumer Price Index">
-        <div class="note">Source: Bureau of Labor Statistics. Data series is adjusted for seasonality. <a href="https://www.bls.gov/cpi/tables/supplemental-files/">Link to data page.</a></div>
-   </div>
-      
+        <h3>Mortgage rate</h3>
+        <p class="desc">The average rate on a new 30-year fixed mortgage. Lower rates make buying a home more affordable.</p>
+        <img src="graphs/mortgage_rate.jpg" alt="30-year fixed mortgage rate">
+        <div class="note">Source: Freddie Mac Primary Mortgage Market Survey. Weekly 30-year fixed rates averaged by month. <a href="https://www.freddiemac.com/pmms">Link to data page.</a></div>
+      </div>
+
+      <!-- The bottom line for households, and how people feel about it -->
+      <div class="section-header">
+        <h2>Paychecks and the public mood</h2>
+        <p>Are wages keeping up with prices &mdash; and how do Americans feel about the economy?</p>
+      </div>
+
+      <div class="graph">
+        <h3>Inflation-adjusted pay</h3>
+        <p class="desc">Hourly pay of typical private-sector workers (excluding managers), with inflation removed. When this line rises, pay is growing faster than prices.</p>
+        <img src="graphs/real_wages.jpg" alt="Average hourly earnings of production and nonsupervisory employees, adjusted for inflation">
+        <div class="note">Source: Bureau of Labor Statistics. Average hourly earnings of production and nonsupervisory employees (about four-fifths of private workers), adjusted for inflation using the Consumer Price Index and expressed in the latest month's dollars. <a href="https://data.bls.gov/dataViewer/view/timeseries/CES0500000008">Link to data page.</a></div>
+      </div>
+
+      <div class="graph">
+        <h3>Wages across the income distribution</h3>
+        <p class="desc">Inflation-adjusted weekly pay of full-time workers near the bottom (10th percentile), middle (median), and top (90th percentile) of the pay scale, relative to early 2024. Shows whose pay is keeping up.</p>
+        <img src="graphs/wage_distribution.jpg" alt="Inflation-adjusted weekly earnings at the 10th percentile, median, and 90th percentile">
+        <div class="note">Source: Bureau of Labor Statistics, usual weekly earnings of full-time wage and salary workers (Current Population Survey). Quarterly data, adjusted for inflation using the Consumer Price Index. <a href="https://data.bls.gov/dataViewer/view/timeseries/LEU0252881500">Link to data page.</a></div>
+      </div>
+
+      <div class="graph">
+        <h3>Consumer confidence</h3>
+        <p class="desc">How optimistic households feel about their finances and the economy, by income group. Higher means more optimistic.</p>
+        <img src="graphs/csi_by_income.jpeg" alt="Consumer confidence by income group">
+        <div class="note">Source: University of Michigan Survey of Consumers. Data series: Index of Consumer Sentiment Within Income Terciles. <a href="https://data.sca.isr.umich.edu/subset/subset.php">Link to data page.</a></div>
+      </div>
+
+      <div class="graph">
+        <h3>Net sentiment about future business conditions</h3>
+        <p class="desc">The share of people expecting good business conditions a year from now, minus the share expecting bad ones. Below zero, pessimists outnumber optimists.</p>
+        <img src="graphs/csi_bexp_net_sentiment.jpeg" alt="Net sentiment about business conditions in a year">
+        <div class="note">Source: University of Michigan Survey of Consumers. Data series: Expected Change in Business Conditions in a Year. Net economic sentiment is calculated as the difference between percent with a favorable outlook and percent with an unfavorable outlook. <a href="https://data.sca.isr.umich.edu/subset/subset.php">Link to data page.</a></div>
+      </div>
+
     </div>
 
     <footer>
@@ -108,7 +247,7 @@
   </a>
 </div>
       -->
-      Updated July 2026
+      Data: Bureau of Labor Statistics, University of Michigan Survey of Consumers, Freddie Mac. Updated July 2026
     </footer>
   </div>
 </body>
