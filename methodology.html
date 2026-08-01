@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How the US Economy Barometer's forecasts of inflation, unemployment, GDP growth, and wage growth are made." />
+  <title>How the Forecasts Are Made | US Economy Barometer</title>
+  <link rel="canonical" href="https://usbarometer.com/methodology.html">
+  <style>
+    body {
+      font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f8;
+      color: #333;
+      line-height: 1.55;
+    }
+    header {
+      background-color: #ffffff;
+      border-bottom: 3px solid #0073B7;
+      padding: 28px 20px 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0 0 6px;
+      color: #1f3a52;
+      font-size: 1.8em;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 10px 20px 30px;
+    }
+    h2 {
+      color: #1f3a52;
+      font-size: 1.25em;
+      margin: 26px 0 6px;
+    }
+    a { color: #0073B7; }
+    .back { font-size: 0.95em; }
+    footer {
+      text-align: center;
+      margin: 40px 0 26px;
+      color: #777;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>How the Forecasts Are Made</h1>
+  </header>
+  <div class="container">
+    <p class="back"><a href="index.html">&larr; Back to the US Economy Barometer</a></p>
+
+    <p>
+      The forecasts at the top of this site &mdash; for inflation, unemployment, economic
+      growth, and inflation-adjusted wages &mdash; come from a statistical model, not from
+      anyone's opinion. This page explains, in plain language, what goes into them and how
+      seriously to take them. A more technical description, including the models'
+      out-of-sample accuracy record, is in the
+      <a href="methodology.pdf">methodology note (PDF)</a>.
+    </p>
+
+    <h2>What goes in</h2>
+    <p>
+      The model uses several decades of official US data: consumer prices, unemployment and
+      other labor-market measures, payrolls, hours and earnings, job openings and quits,
+      industrial production and factory capacity use, retail sales, building permits,
+      consumer sentiment and household inflation expectations from the University of Michigan,
+      mortgage rates, Treasury interest rates, weekly unemployment insurance claims, quarterly
+      GDP, and weekly earnings across the pay distribution. Everything comes directly from the
+      original government and university sources &mdash; the same series shown in the graphs
+      on the main page, but going back to the 1970s.
+    </p>
+
+    <h2>How the model works</h2>
+    <p>
+      Three different forecasting approaches are combined, because decades of forecasting
+      research show that averaging models beats trusting any single one:
+    </p>
+    <p>
+      <strong>1. A dynamic factor model.</strong> This is the same type of model the Federal
+      Reserve Bank of New York uses for its GDP &ldquo;nowcast.&rdquo; It distills the common
+      movement in all the data series into a few underlying trends and projects them forward.
+      It is especially good at reading the economy's current momentum from data series that
+      arrive at different times.
+    </p>
+    <p>
+      <strong>2. A machine-learning model.</strong> A gradient-boosting model (a technique
+      that builds many small decision trees) looks for patterns in how today's data relate
+      to where inflation, unemployment, and growth end up a year later. It can pick up
+      relationships the other models miss, at some cost in transparency.
+    </p>
+    <p>
+      <strong>3. A simple statistical benchmark.</strong> Each number is also forecast from
+      nothing but its own history. This humble approach is surprisingly hard to beat, so it
+      earns a substantial weight in the average.
+    </p>
+    <p>
+      The three forecasts are averaged, with more weight on whichever approach has been more
+      accurate historically for that particular number and time horizon. For wage growth
+      across the pay distribution, only the first and third approaches are used &mdash; the
+      quarterly wage data start in 2000, which is too little history to train the
+      machine-learning model responsibly.
+    </p>
+
+    <h2>What the ranges mean</h2>
+    <p>
+      Every forecast comes with a &ldquo;68% range&rdquo; and, on the charts, a wider
+      &ldquo;90% range.&rdquo; These are based on a simple idea: we pretended to stand at
+      every month since 2005, gave the model only the data it would have had at the time,
+      let it forecast, and recorded how wrong it was. The ranges show how far off those
+      historical forecasts typically were. If the future resembles the past, the actual
+      number should land inside the 68% range about two-thirds of the time &mdash; which
+      also means it will land <em>outside</em> that range about one time in three. That is
+      the honest nature of economic forecasting.
+    </p>
+
+    <h2>What to keep in mind</h2>
+    <p>
+      Forecasting models extrapolate patterns; they cannot foresee wars, pandemics, financial
+      crises, or policy surprises. The accuracy test above also uses today's (revised)
+      versions of the data rather than the preliminary numbers available in real time, so the
+      ranges are, if anything, a little too narrow &mdash; especially for GDP, which is
+      revised heavily. Treat the forecasts as a disciplined summary of where current data
+      point, not a promise.
+    </p>
+    <p>
+      The forecasts are refreshed every month when new data come out, and the model's
+      accuracy record (which sets the weights and the ranges) is re-checked once a year.
+    </p>
+
+    <p class="back"><a href="index.html">&larr; Back to the US Economy Barometer</a></p>
+
+    <footer>
+      Data: Bureau of Labor Statistics, Bureau of Economic Analysis, Federal Reserve Board,
+      U.S. Census Bureau, University of Michigan Survey of Consumers, Freddie Mac,
+      U.S. Treasury, U.S. Department of Labor.
+    </footer>
+  </div>
+</body>
+</html>
