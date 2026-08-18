@@ -54,14 +54,12 @@
 
     <p>
       The forecasts at the top of this site &mdash; for inflation, unemployment, economic
-      growth, and inflation-adjusted wages &mdash; come from a statistical model, not from
-      anyone's opinion. This page explains, in plain language, what goes into them and how
-      seriously to take them. A more technical description, including the models'
+      growth, and inflation-adjusted wages &mdash; come from a statistical model. This page explains how they are made and their limitations. A more technical description, including the models'
       out-of-sample accuracy record, is in the
       <a href="methodology.pdf">methodology note (PDF)</a>.
     </p>
 
-    <h2>What goes in</h2>
+    <h2>What is used to create a forecast</h2>
     <p>
       The model uses several decades of official US data: consumer prices, unemployment and
       other labor-market measures, payrolls, hours and earnings, job openings and quits,
@@ -69,14 +67,13 @@
       consumer sentiment and household inflation expectations from the University of Michigan,
       mortgage rates, Treasury interest rates, weekly unemployment insurance claims, quarterly
       GDP, and weekly earnings across the pay distribution. Everything comes directly from the
-      original government and university sources &mdash; the same series shown in the graphs
-      on the main page, but going back to the 1970s.
+      original government and university sources.
     </p>
 
     <h2>How the model works</h2>
     <p>
       Three different forecasting approaches are combined, because decades of forecasting
-      research show that averaging models beats trusting any single one:
+      research show that averaging models often performs better than trusting any single one:
     </p>
     <p>
       <strong>1. A dynamic factor model.</strong> This is the same type of model the Federal
@@ -93,27 +90,26 @@
     </p>
     <p>
       <strong>3. A simple statistical benchmark.</strong> Each number is also forecast from
-      nothing but its own history. This humble approach is surprisingly hard to beat, so it
-      earns a substantial weight in the average.
+      nothing but its own history. This very simple approach is surprisingly hard to beat, so it
+      ends up having a substantial weight in the average.
     </p>
     <p>
       The three forecasts are averaged, with more weight on whichever approach has been more
       accurate historically for that particular number and time horizon. For wage growth
-      across the pay distribution, only the first and third approaches are used &mdash; the
+      across the pay distribution, only the first and third approaches are used. This is because the
       quarterly wage data start in 2000, which is too little history to train the
-      machine-learning model responsibly.
+      machine-learning model well.
     </p>
 
     <h2>What the ranges mean</h2>
     <p>
       Every forecast comes with a &ldquo;68% range&rdquo; and, on the charts, a wider
-      &ldquo;90% range.&rdquo; These are based on a simple idea: we pretended to stand at
+      &ldquo;90% range.&rdquo; These are based on a simple exercise: we started at
       every month since 2005, gave the model only the data it would have had at the time,
       let it forecast, and recorded how wrong it was. The ranges show how far off those
-      historical forecasts typically were. If the future resembles the past, the actual
-      number should land inside the 68% range about two-thirds of the time &mdash; which
-      also means it will land <em>outside</em> that range about one time in three. That is
-      the honest nature of economic forecasting.
+      historical forecasts typically were. If the future is similarly uncertain, the actual
+      number should land inside the 68% range about two-thirds of the time. This
+      also means it will land <em>outside</em> that range about one time in three. Similarly, the forecast should land inside the 90% range nine out of ten times and outside of it one out of ten times. Prediction is hard, especially about the future!
     </p>
 
     <h2>What to keep in mind</h2>
@@ -122,7 +118,7 @@
       crises, or policy surprises. The accuracy test above also uses today's (revised)
       versions of the data rather than the preliminary numbers available in real time, so the
       ranges are, if anything, a little too narrow &mdash; especially for GDP, which is
-      revised heavily. Treat the forecasts as a disciplined summary of where current data
+      revised heavily. The forecasts are therefore a disciplined summary of where current data
       point, not a promise.
     </p>
     <p>
